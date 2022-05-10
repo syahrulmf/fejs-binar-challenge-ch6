@@ -1,8 +1,20 @@
 import React from "react";
 import "./Login.css";
 import Car from "../../assets/images/img-mobil.png";
+import GoogleLogin from "react-google-login";
 
 export default function Login() {
+  // const handleFailure = (result) => {
+  //   console.log(result);
+  // };
+
+  // const handleLogin = (googleData) => {
+  //   console.log(googleData);
+  // };
+
+  const responseGoogle = (response) => {
+    console.log(response);
+  };
   return (
     <>
       <section className="vh-100">
@@ -46,6 +58,14 @@ export default function Login() {
                     Sign In
                   </button>
                 </form>
+                <p className="text-center mt-4">OR</p>
+                <GoogleLogin
+                  clientId="244205007996-2qn8pqps20lliai7gi5ephc45fpovqmn.apps.googleusercontent.com"
+                  buttonText="Login With Google"
+                  onSuccess={responseGoogle}
+                  onFailure={responseGoogle}
+                  cookiePolicy="single_host_origin"
+                ></GoogleLogin>
               </div>
             </div>
           </div>

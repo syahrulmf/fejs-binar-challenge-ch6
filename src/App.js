@@ -4,6 +4,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Rental from "./pages/Rental/Rental";
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
         <Route path="/">
           {/* <Route element={<ProtectedRoute />}>
           </Route> */}
-          <Route index element={<Home />} />
+          <Route index element={<Register />} />
           <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
+          <Route path="dashboard" element={<Home />} />
+          <Route path="rental" element={<Rental />} />
           <Route path="*" element={<div>Not Found</div>} />
         </Route>
       </Routes>
