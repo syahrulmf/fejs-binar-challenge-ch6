@@ -3,6 +3,7 @@ import "./Register.css";
 import Car from "../../assets/images/img-mobil.png";
 import GoogleLogin from "react-google-login";
 import { Link } from "react-router-dom";
+import Logo from "../../assets/images/logo-bcr.png";
 
 export default function Register() {
   const responseGoogle = (response) => {
@@ -24,7 +25,7 @@ export default function Register() {
             </div>
             <div className="col-4">
               <div className="form-head">
-                <img src="images/logo-bcr.png" alt="" />
+                <img src={Logo} alt="" />
                 <h1>Create New Account</h1>
               </div>
 
@@ -52,9 +53,12 @@ export default function Register() {
                     Sign Up
                   </button>
                 </form>
-                <Link className="link" to={"/login"}>
-                  Already have an account? Login.
-                </Link>
+                <span className="link">
+                  Already have account ?
+                  <Link className="login-link" to={"/login"}>
+                    Sign In.
+                  </Link>
+                </span>
                 <p className="text-center mt-4">OR</p>
                 <GoogleLogin
                   clientId="244205007996-2qn8pqps20lliai7gi5ephc45fpovqmn.apps.googleusercontent.com"

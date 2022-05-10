@@ -3,7 +3,7 @@ import Rectangle2 from "../../assets/images/icon/Rectangle 62.png";
 import Menu from "../../assets/images/icon/fi_menu.png";
 import User from "../../assets/images/icon/Group 15.png";
 
-export default function Navbar() {
+export default function Navbar({ logout }) {
   return (
     <>
       <section className="navbar-section">
@@ -54,7 +54,7 @@ export default function Navbar() {
                 <li className="nav-item">
                   <div className="dropdown">
                     <a
-                      href="#"
+                      onClick={logout}
                       className="d-flex flex-row justify-content-center align-items-center link-dark text-decoration-none dropdown-toggle me-2"
                       id="dropdownUser"
                       data-bs-toggle="dropdown"
@@ -74,9 +74,7 @@ export default function Navbar() {
                       aria-labelledby="dropdownUser"
                     >
                       <li>
-                        <a className="dropdown-item" href="#">
-                          Log Out
-                        </a>
+                        <a className="dropdown-item">Log Out</a>
                       </li>
                     </ul>
                   </div>

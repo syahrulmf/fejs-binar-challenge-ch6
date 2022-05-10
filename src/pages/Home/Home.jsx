@@ -1,28 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import FI from "../../assets/images/icon/fi.png";
 import Sort from "../../assets/images/icon/fi_sort.png";
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const token = localStorage.getItem("access_token");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!token) {
+      window.location.href = "/login";
+    }
+  }, []);
+
+  if (!token) {
+    return <div>Loading...</div>;
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem("access_token");
+    navigate("/login", { replace: true });
+  };
   return (
     <>
       <div className="container-fluid p-0">
-        <Navbar />
+        <Navbar logout={() => handleLogout()} />
 
         <Sidebar />
 
-        {/* <!-- NAVBAR SECTION BEGIN -->
-<%- include('partials/navbar.ejs'); %>
-<!-- NAVBAR SECTION END -->
-
-<!-- SIDEBAR SECTION BEGIN -->
-<%- include('partials/sidebar.ejs'); %>
-<!-- SIDEBAR SECTION END -->
-
-<!-- CONTENT SECTION BEGIN -->
-<!-- BAGIAN ISI CONTENT DI MULAI DARI SINI --> */}
+        {/* <!-- BAGIAN ISI CONTENT DI MULAI DARI SINI --> */}
         <section className="content-section ps-5 pe-4">
           <div className="row">
             <div className="col-lg-0" id="show-col-lg-0">

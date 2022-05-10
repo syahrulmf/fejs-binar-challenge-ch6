@@ -11,12 +11,12 @@ function App() {
     <>
       <Routes>
         <Route path="/">
-          {/* <Route element={<ProtectedRoute />}>
-          </Route> */}
           <Route index element={<Register />} />
           <Route path="login" element={<Login />} />
-          <Route path="dashboard" element={<Home />} />
-          <Route path="rental" element={<Rental />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="dashboard" element={<Home />} />
+            <Route path="rental" element={<Rental />} />
+          </Route>
           <Route path="*" element={<div>Not Found</div>} />
         </Route>
       </Routes>
