@@ -38,23 +38,24 @@ export default function Register() {
       console.log(res.data);
 
       if (res.status === 201) {
-        alert("Register berhasil");
+        alert("Register berhasil, Silahkan Sign In untuk melanjutkan!");
         setDataRegister({
           email: "",
           password: "",
         });
       }
     } catch (error) {
-      // if (res.status === 400) {
-      //   console.log("email already exists");
-      //   setDataRegister({
-      //     email: "",
-      //     password: "",
-      //   });
-      // }
-      // alert("data yang anda masukan salah!");
+      if (error.code === "ERR_BAD_RESPONSE") {
+        alert("data yang anda masukan salah");
+      }
 
-      console.log(error);
+      if (error.code === "ERR_BAD_REQUEST") {
+        alert("Email already exists");
+        setDataRegister({
+          email: "",
+          password: "",
+        });
+      }
     }
   };
 
