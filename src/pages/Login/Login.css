@@ -4,25 +4,24 @@
   padding: 0;
 }
 
-.row>* {
+.row > * {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-.form-head{
+.form-head {
   margin-top: 120px;
   padding-left: 55px !important;
   padding-right: 55px !important;
 }
 
-.form-head h1{
-  font-family: 'Poppins';
+.form-head h1 {
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 36px;
   /* identical to box height, or 150% */
-
 
   color: #000000;
   margin-top: 24px;
@@ -35,13 +34,13 @@
 
 .form-content button {
   width: 100%;
-  background: #0D28A6;
+  background: #0d28a6;
   border-radius: 2px;
   margin-top: 16px;
 }
 
-.form-content label{
-  font-family: 'Poppins';
+.form-content label {
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -50,8 +49,8 @@
   color: #222222;
 }
 
-.form-content input{
-  background: #FFFFFF;
+.form-content input {
+  background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   border-radius: 5px;
@@ -65,14 +64,14 @@ body {
   font-weight: lighter;
 }
 
-thead{
-  background: #CFD4ED;
+thead {
+  background: #cfd4ed;
 }
 
 .drop .form-select {
   width: 62px;
   height: 36px;
-font-size: 12px;
+  font-size: 12px;
 }
 
 .jtp .form-select {
@@ -80,9 +79,9 @@ font-size: 12px;
   height: 36px;
   font-size: 12px;
 }
-.paging nav{
+.paging nav {
   display: flex;
-justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 a.page-link {
@@ -91,22 +90,33 @@ a.page-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #8A8A8A;
+  color: #8a8a8a;
 }
-.page-item.active .page-link{
-  background: #CFD4ED;
-  color: #0D28A6;
-  border-color: #0D28A6;
+.page-item.active .page-link {
+  background: #cfd4ed;
+  color: #0d28a6;
+  border-color: #0d28a6;
 }
-.form-select{
+.form-select {
   display: inline;
 }
-.btn{
+.btn {
   display: inline;
-  background: #0D28A6;
+  background: #0d28a6;
   color: #fff;
   width: 43px;
   height: 36px;
+}
+
+.btn-back {
+  display: inline;
+  background-color: #fff !important;
+  color: #000 !important;
+  margin-top: -5px !important;
+}
+
+.btn-back:hover {
+  color: #0d28a6 !important;
 }
 
 /* END Kelompok 3 */

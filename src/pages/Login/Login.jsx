@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Login.css";
 import Car from "../../assets/images/img-mobil.png";
-import GoogleLogin from "react-google-login";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Logo from "../../assets/images/logo-bcr.png";
-import { gapi } from "gapi-script";
 
 export default function Login() {
   const [dataLogin, setDataLogin] = useState({
@@ -14,12 +12,6 @@ export default function Login() {
   });
 
   const navigate = useNavigate();
-
-  const responseGoogle = (response) => {
-    // console.log(response);
-    localStorage.setItem("access_token", response.tokenObj.id_token);
-    navigate("/", { replace: true });
-  };
 
   useEffect(() => {
     if (localStorage.getItem("access_token")) {
@@ -113,15 +105,9 @@ export default function Login() {
                 >
                   Sign In
                 </button>
-
-                <p className="text-center mt-4">OR</p>
-                <GoogleLogin
-                  clientId="244205007996-2qn8pqps20lliai7gi5ephc45fpovqmn.apps.googleusercontent.com"
-                  buttonText="Sign In With Google"
-                  onSuccess={responseGoogle}
-                  onFailure={responseGoogle}
-                  cookiePolicy={"single_host_origin"}
-                ></GoogleLogin>
+                <button className="btn btn-back" onClick={() => navigate("/")}>
+                  Back To Register
+                </button>
               </div>
             </div>
           </div>

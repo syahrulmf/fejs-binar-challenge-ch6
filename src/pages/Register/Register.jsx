@@ -5,6 +5,7 @@ import GoogleLogin from "react-google-login";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/images/logo-bcr.png";
 import axios from "axios";
+import { gapi } from "gapi-script";
 
 export default function Register() {
   const [dataRegister, setDataRegister] = useState({
@@ -15,9 +16,11 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  // const responseGoogle = (response) => {
-  //   console.log(response);
-  // };
+  const responseGoogle = (response) => {
+    // console.log(response);
+    localStorage.setItem("access_token", response.tokenObj.id_token);
+    navigate("/", { replace: true });
+  };
 
   useEffect(() => {
     if (localStorage.getItem("access_token")) {
@@ -120,14 +123,14 @@ export default function Register() {
                     Sign In.
                   </Link>
                 </span>
-                {/* <p className="text-center mt-4">OR</p>
+                <p className="text-center mt-4">OR</p>
                 <GoogleLogin
                   clientId="244205007996-2qn8pqps20lliai7gi5ephc45fpovqmn.apps.googleusercontent.com"
-                  buttonText="Login With Google"
+                  buttonText="Sign In With Google"
                   onSuccess={responseGoogle}
                   onFailure={responseGoogle}
                   cookiePolicy={"single_host_origin"}
-                ></GoogleLogin> */}
+                ></GoogleLogin>
               </div>
             </div>
           </div>
