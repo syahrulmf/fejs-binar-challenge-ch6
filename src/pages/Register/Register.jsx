@@ -21,7 +21,7 @@ export default function Register() {
 
   useEffect(() => {
     if (localStorage.getItem("access_token")) {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, []);
 

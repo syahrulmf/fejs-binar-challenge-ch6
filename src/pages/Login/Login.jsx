@@ -18,12 +18,12 @@ export default function Login() {
   const responseGoogle = (response) => {
     // console.log(response);
     localStorage.setItem("access_token", response.tokenObj.id_token);
-    navigate("/rental", { replace: true });
+    navigate("/", { replace: true });
   };
 
   useEffect(() => {
     if (localStorage.getItem("access_token")) {
-      navigate("/dashboard");
+      navigate("/");
     }
   });
 
@@ -43,7 +43,7 @@ export default function Login() {
 
       if (res.status === 201 && res.data.role === "Customer") {
         localStorage.setItem("access_token", res.data.access_token);
-        navigate("/rental", { replace: true });
+        navigate("/", { replace: true });
       }
     } catch (error) {
       alert("data yang anda masukan salah!");
@@ -117,7 +117,7 @@ export default function Login() {
                 <p className="text-center mt-4">OR</p>
                 <GoogleLogin
                   clientId="244205007996-2qn8pqps20lliai7gi5ephc45fpovqmn.apps.googleusercontent.com"
-                  buttonText="Login With Google"
+                  buttonText="Sign In With Google"
                   onSuccess={responseGoogle}
                   onFailure={responseGoogle}
                   cookiePolicy={"single_host_origin"}

@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!token) {
-      window.location.href = "/login";
+      window.location.href = "/register";
     }
   }, []);
 
@@ -22,7 +22,7 @@ export default function Home() {
 
   const handleLogout = () => {
     localStorage.removeItem("access_token");
-    navigate("/login", { replace: true });
+    navigate("/register", { replace: true });
   };
   return (
     <>
