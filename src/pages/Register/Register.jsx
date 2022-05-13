@@ -5,7 +5,7 @@ import GoogleLogin from "react-google-login";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/images/logo-bcr.png";
 import axios from "axios";
-import { gapi } from "gapi-script";
+import "gapi-script";
 
 export default function Register() {
   const [dataRegister, setDataRegister] = useState({

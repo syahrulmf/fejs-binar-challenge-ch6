@@ -63,7 +63,7 @@ export default function Login() {
             <div className="col-4">
               <div className="form-head">
                 <img src={Logo} alt="" />
-                <h1>Sign In</h1>
+                <h1>Welcome to sign in page</h1>
               </div>
 
               <div className="form-content">
