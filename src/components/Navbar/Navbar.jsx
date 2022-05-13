@@ -67,7 +67,9 @@ export default function Navbar({ logout }) {
                         className="rounded-circle me-2"
                         style={{ objectFit: "cover" }}
                       />
-                      <p className="my-0 me-2">Unis Badri</p>
+                      <p className="my-0 me-2" style={{ cursor: "pointer" }}>
+                        Logout
+                      </p>
                     </a>
                     <ul
                       className="dropdown-menu text-small shadow"
