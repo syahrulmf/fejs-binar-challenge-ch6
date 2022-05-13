@@ -11,9 +11,9 @@ function Rental() {
 
   useEffect(() => {
     if (!token) {
-      window.location.href = "/login";
+      window.location.href = "/";
     }
-  }, []);
+  });
 
   if (!token) {
     return <div>Loading...</div>;
@@ -21,7 +21,7 @@ function Rental() {
 
   const handleLogout = () => {
     localStorage.removeItem("access_token");
-    navigate("/login", { replace: true });
+    navigate("/", { replace: true });
   };
   return (
     <>

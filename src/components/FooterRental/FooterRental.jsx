@@ -10,10 +10,10 @@ import "./FooterRental.css";
 function FooterRental() {
   return (
     <>
-      <footer class="footer" id="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-6 address-list">
+      <footer className="footer" id="footer">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3 col-sm-6 col-xs-6 address-list">
               <ul>
                 <li>
                   Jalan Suroyo No. 161 Mayangan <br /> Kota Probolonggo 672000
@@ -22,7 +22,7 @@ function FooterRental() {
                 <li>081-233-334-808</li>
               </ul>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 nav-list">
+            <div className="col-md-3 col-sm-6 col-xs-6 nav-list">
               <ul>
                 <li>
                   <a href="#services">Our Services</a>
@@ -38,7 +38,7 @@ function FooterRental() {
                 </li>
               </ul>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 sosmed-list">
+            <div className="col-md-3 col-sm-6 col-xs-12 sosmed-list">
               <p>Connect with us</p>
               <a href="#">
                 <i>
@@ -66,7 +66,7 @@ function FooterRental() {
                 </i>
               </a>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 copyright">
+            <div className="col-md-3 col-sm-6 col-xs-12 copyright">
               <p>Copyright Binar 2022</p>
               <img src={Logo} />
             </div>

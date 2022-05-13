@@ -14,29 +14,29 @@ function FormRental() {
                     <div className="col-auto">
                       <span>Tipe Driver</span>
                       <div className="input-group">
-                        <select class="form-select" id="inputGroupSelect01">
-                          <option selected>Pilih Tipe Driver</option>
-                          <option value="1">Dengan Supir</option>
-                          <option value="2">Tanpa Supir (Lepas Kunci)</option>
+                        <select className="form-select" id="inputGroupSelect01">
+                          <option>Pilih Tipe Driver</option>
+                          <option>Dengan Supir</option>
+                          <option>Tanpa Supir (Lepas Kunci)</option>
                         </select>
                       </div>
                     </div>
                     <div className="col-auto">
                       <span>Tanggal</span>
                       <div className="input-group">
-                        <input type="date" class="form-control" />
+                        <input type="date" className="form-control" />
                       </div>
                     </div>
                     <div className="col-auto">
                       <span>Waktu Jemput/Ambil</span>
                       <div className="input-group">
-                        <select class="form-select" id="inputGroupSelect01">
-                          <option selected>Pilih Waktu</option>
-                          <option value="1">08.00 WIB</option>
-                          <option value="2">09.00 WIB</option>
-                          <option value="3">10.00 WIB</option>
-                          <option value="4">11.00 WIB</option>
-                          <option value="5">12.00 WIB</option>
+                        <select className="form-select" id="inputGroupSelect01">
+                          <option>Pilih Waktu</option>
+                          <option>08.00 WIB</option>
+                          <option>09.00 WIB</option>
+                          <option>10.00 WIB</option>
+                          <option>11.00 WIB</option>
+                          <option>12.00 WIB</option>
                         </select>
                       </div>
                     </div>

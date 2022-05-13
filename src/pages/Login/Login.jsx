@@ -5,16 +5,9 @@ import GoogleLogin from "react-google-login";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Logo from "../../assets/images/logo-bcr.png";
+import { gapi } from "gapi-script";
 
 export default function Login() {
-  // const handleFailure = (result) => {
-  //   console.log(result);
-  // };
-
-  // const handleLogin = (googleData) => {
-  //   console.log(googleData);
-  // };
-
   const [dataLogin, setDataLogin] = useState({
     email: "",
     password: "",
@@ -23,7 +16,9 @@ export default function Login() {
   const navigate = useNavigate();
 
   const responseGoogle = (response) => {
-    console.log(response);
+    // console.log(response);
+    localStorage.setItem("access_token", response.tokenObj.id_token);
+    navigate("/rental", { replace: true });
   };
 
   useEffect(() => {
@@ -46,7 +41,7 @@ export default function Login() {
         navigate("/dashboard", { replace: true });
       }
 
-      if (res.status === 201 && res.data.role === "user") {
+      if (res.status === 201 && res.data.role === "Customer") {
         localStorage.setItem("access_token", res.data.access_token);
         navigate("/rental", { replace: true });
       }
@@ -125,7 +120,7 @@ export default function Login() {
                   buttonText="Login With Google"
                   onSuccess={responseGoogle}
                   onFailure={responseGoogle}
-                  cookiePolicy="single_host_origin"
+                  cookiePolicy={"single_host_origin"}
                 ></GoogleLogin>
               </div>
             </div>
